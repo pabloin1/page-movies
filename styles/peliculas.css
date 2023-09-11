@@ -1,0 +1,269 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(28, 28, 36);
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.encabezado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+
+}
+
+#logo {
+    font-family: 'Bebas Neue', cursive;
+    font-size:32px;
+    color: white;
+    font-weight: 700;
+}
+
+.navegacion a {
+    position: relative;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left:40px; 
+}
+
+.navegacion a::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: .3s;
+}
+
+.navegacion a:hover::before{
+    width: 100%;
+}
+
+.contenedor {
+    width: 90%;
+    margin: auto;
+}
+
+.pelicula-principal {
+    padding-top: 50px;
+    font-size: 16px;
+    min-height: 30em;
+    color:white;
+    background-image: linear-gradient(rgba(0,0,0,.50) 0% , rgba(0,0,0,0.50) 100%), url('../img/movie1.jpg');
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 2em;
+    display: flex;
+    align-items: end;
+    box-shadow: 0 0 50px black;
+}
+
+.pelicula-principal .contenedor {
+    margin: 0 auto;
+    margin-bottom: 6.25em;
+}
+
+.pelicula-principal .titulo-pelicula {
+    font-weight: 600;
+    font-size: 3.12em;
+    margin-bottom: 0.4em;
+}
+
+.pelicula-principal .descripcion {
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+    max-width: 50%;
+    margin-bottom: 1.25em;
+}
+
+.boton {
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em 1.87em;
+    color:white;
+    margin-right: 1.25em;
+    cursor: pointer;
+    transition:.3s ease all;
+    font-size: 1.12em ;
+}
+
+.boton:hover {
+    background-color: white;
+    color: black;
+}
+
+.titulos {
+    padding-left: 30px;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.subtitulos {
+    padding-left: 30px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.anterior, .siguiente {
+    position: absolute;
+    background-color: black;
+    color: white;
+    opacity: .5;
+    border: none;
+    border-radius: 0.31em;
+    width: 50px;
+    height: 50%;
+    top: calc(50% - 25%);
+    line-height: 40px;
+    padding: 10px 20px;
+    margin: 10px;
+    transition:.3s ease all;
+    cursor: pointer;
+    z-index: 500;
+}
+
+
+
+.anterior {
+    left: 0;
+}
+
+.siguiente {
+    right: 0;
+}
+
+.contenedor-principal {
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.slider-container {
+    overflow: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.slider, .slider2 {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.imagen {
+    display: grid;
+    min-width: 19.5%;
+    transition: .3s ease all;
+    margin: 3px;
+}
+
+
+
+.imagen img {
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    height: 180px;
+}
+
+.abrirModal {
+    background-color: black;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 0 0 20px 20px;
+}
+
+.abrirModal:hover {
+    background-color: white;
+    color: black;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    border-radius: 20px;
+    background-position: center center;
+    background-size: cover;
+    top: 20%;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+    z-index: 500;
+    box-shadow: 0 0 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contenido {
+    background-color: rgba(0,0,0,.50);
+    color: white;
+    border-radius: 20px 20px 0 0;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .encabezado{
+        display: flex;
+        text-align: center;
+        top: 0;
+    }
+
+    .encabezado h1{
+        display: none;
+    }
+
+    .navegacion{
+        overflow: scroll;
+    }
+
+    .pelicula-principal {
+        font-size: 14px;
+    }
+
+    .pelicula-principal .descripcion {
+        max-width: 100%;
+    }
+
+    .slider-container {
+        overflow: visible;
+    }
+
+    .slider, .slider2 {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 3px;
+	}
+    
+    .anterior, .siguiente {
+		display: none;
+	}
+}

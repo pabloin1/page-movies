@@ -1,0 +1,102 @@
+#contain-cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 300px;
+}
+@media (max-width: 1000px) {
+  #contain-cards {
+    height: 50%;
+  }
+}
+
+.carta {
+  height: 300px;
+  width: 270px;
+  margin: 20px auto;
+  text-align: center;
+  box-shadow: 1px 1px 4px 1px;
+  border-radius: 6px;
+  background-color: white;
+  transition: height 0.4s ease-in-out;
+  color: rgb(28, 28, 36);
+}
+
+#contain-cards2 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contain-img {
+  height: 300px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-position: bottom;
+  transition: all 0.1s ease-in;
+  object-fit: contain;
+}
+.img-movies {
+  width: 100%;
+  height: 300px;
+}
+
+.text-card {
+  pointer-events: none;
+  display: none;
+}
+
+/* Estilos para el modal */
+.modal {
+  margin-top: 10px;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: rgba(0, 0, 0, 0.7);
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 70%;
+  position: relative;
+  color: rgb(245, 222, 179);
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Estilos para los botones en el modal */
+.modal-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.modal-button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: #007bff; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* Transición al pasar el cursor sobre el botón */
+}
+
+.modal-button:hover {
+  background-color: #0056b3; /* Cambia el color de fondo al pasar el cursor sobre el botón */
+}

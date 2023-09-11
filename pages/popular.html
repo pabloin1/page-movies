@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPFilms</title>
+    <link rel="stylesheet" href="../styles/popular.css">
+    <link rel="stylesheet" href="../styles/cards.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="encabezado">
+        <h1 id="logo">UPFilms</h1>
+        <nav class="navegacion">
+            <a href="../index.html" class="direccion">Inicio</a>
+            <a href="./series.html" class="direccion">Series</a>
+            <a href="./peliculas.html" class="direccion">Películas</a>
+            <a href="./popular.html" class="direccion">Popular</a>
+            <a href="./recientes.html" class="direccion">Recientes</a>
+        </nav>
+    </header>
+
+    <div class="pelicula">
+        <div class="pelicula-principal">
+            <div class="contenedor">
+                <h3 class="titulo-pelicula">Oppenheimer (2023)</h3>
+                <p class="descripcion">
+                    Película sobre el físico J. Robert Oppenheimer y su papel como desarrollador de la bomba atómica.
+                    Basada en el libro 'American Prometheus:
+                    The Triumph and Tragedy of J. Robert Oppenheimer' de Kai Bird y Martin J. Sherwin.
+                </p>
+                <button role="button" class="boton">
+                    <i class="fas fa-play"></i>
+                    Reproducir
+                </button>
+                <button role="button" class="boton">
+                    <i class="fas fa-info"></i>
+                    Mas información
+                </button>
+            </div>
+        </div>
+
+        <h1 class="titulos">Más populares</h1>
+ 
+        <h3 class="subtitulos ">Películas</h3>
+
+        <div id="contain-cards">
+           
+        </div>
+
+        <h3 class="subtitulos sub">Series</h3>
+
+        <div id="contain-cards2">
+           
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <!-- Contenido del modal -->
+                  <span class="close">&times;</span>
+                  <div id="modal-content"></div>
+                  <!-- Agrega los botones -->
+                  <div class="modal-buttons">
+                    <button id="reproducir" class="modal-button">Reproducir</button>
+                    <button id="masInformacion" class="modal-button">Más Información</button>
+                  </div>
+                </div>
+              </div>
+
+              <div id="videoModal" class="modal">
+                <div class="modal-content video-content">
+                  <!-- Contenido del modal de video -->
+                  <span class="close-video">&times;</span>
+                  <div id="video-container">
+                    <video id="videoPlayer" controls autoplay>
+                      <!-- Agrega la fuente del video aquí -->
+                    </video>
+                  </div>
+                </div>
+              </div>
+            
+        </div>
+
+        <script src="../js/popular.js" type="module"></script>
+</body>
+</html>
